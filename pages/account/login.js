@@ -1,11 +1,11 @@
 import { useState, useEffect, useContext } from "react";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaUser } from "react-icons/fa";
 import Link from "next/link";
 import styled from "styled-components";
 import Layout from "@/components/Layout";
-import AuthContext from "@/context/AuthContext";
+// import AuthContext from "@/context/AuthContext";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");

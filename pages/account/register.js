@@ -1,11 +1,11 @@
-import { FaUser } from "react-icons/fa";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect, useContext } from "react";
+import "react-toastify/dist/ReactToastify.css";
+import { FaUser } from "react-icons/fa";
 import Link from "next/link";
-import Layout from "@/components/Layout";
-import AuthContext from "@/context/AuthContext";
 import styled from "styled-components";
+import Layout from "@/components/Layout";
+// import AuthContext from "@/context/AuthContext";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function RegisterPage() {
   const [username, setUsername] = useState("");

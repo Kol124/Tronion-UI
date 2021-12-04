@@ -8,9 +8,10 @@ const SecondaryStyle = ({ secondary }) => {
     `;
   } else {
     return css`
-      padding: 7px 12px;
-      font-size: 1.4rem;
-      background: rgb(244, 135, 50);
+      font-size: 14px;
+      padding: 8px 40px;
+      border-radius: 50px;
+      background: ${(p) => p.theme.btnPrimary};
     `;
   }
 };
@@ -19,15 +20,15 @@ export const Button = styled.button`
   border: none;
   font: inherit;
   color: #f9f9f9;
-  border-radius: 2px;
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
+  margin-left: 7%;
   cursor: pointer;
   outline: none;
-  ${SecondaryStyle};
 
   :hover {
-    background: #f9f9f9;
-    color: rgb(244, 135, 50);
-    border: 1px solid rgb(244, 135, 50);
+    border: 1px solid #f9f9f9;
+    background: ${(p) => p.theme.backgroundPrimary};
   }
+
+  ${SecondaryStyle};
 `;

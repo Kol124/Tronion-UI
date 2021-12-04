@@ -5,7 +5,7 @@ import styled from "styled-components";
 export default function HomePage({ props }) {
   return (
     <Layout>
-      <Heading>Hi</Heading>
+      <Heading>Welcome</Heading>
     </Layout>
   );
 }

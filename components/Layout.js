@@ -1,48 +1,43 @@
 import Head from "next/head";
 import Header from "./Header";
-import Footer from "./Footer";
-import { useRouter } from "next/router";
+import { Footer } from "./common";
 import styled from "styled-components";
 
 export default function Layout({ title, keywords, description, children }) {
-  const router = useRouter();
-
   return (
     <div>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
       </Head>
 
-      <Body>
+      <Container>
         <Header />
-        <Container>{children}</Container>
-        <Footer />
-      </Body>
+        {children}
+        <Footer>
+          See our milestone for use cases, as we plan to reach 1USD per Tronion
+          token
+        </Footer>
+      </Container>
     </div>
   );
 }
 
-const Body = styled.div`
-  min-height: 100%;
-
-  a {
-    font-size: 1.3rem;
-    text-decoration: none;
-    transition: 0.2s ease;
-  }
-`;
-
 const Container = styled.main`
-  min-height: 60vh;
-  max-width: 113rem;
-  padding: 2rem 3rem;
-  margin: 0 auto 3rem auto;
+  margin: 0 auto 0 auto;
+  position: relative;
+  max-width: 1200px;
   overflow: auto;
 
-  @media only screen and (max-width: 768px) {
-    padding: 0 1rem;
+  @media only screen and (max-width: 1200px) {
+    padding: 0 12px;
   }
 `;
 

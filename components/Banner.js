@@ -18,7 +18,7 @@ const HeaderImage = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background: #000 url("/images/banner.jpg") no-repeat center center;
+  background: #000 url("/images/event.jpg") no-repeat center center;
 
   @media only screen and (max-width: 768px) {
     height: 30vh;
@@ -39,12 +39,10 @@ const HeaderImage = styled.div`
   }
 
   h1 {
-    font-family: "Shadows Into Light", sans-serif;
     margin-bottom: 0;
-    font-size: 8rem;
 
     @media only screen and (max-width: 768px) {
-      font-size: 5rem;
+      font-size: 2rem;
     }
   }
 `;

@@ -1,6 +1,10 @@
+export * from "./Line";
+export * from "./Text";
+export * from "./Input";
 export * from "./Button";
-export * from "./Footer";
 // export * from "./Hero";
 // export * from "./Modal";
 // export * from "./Radial";
-// export * from "./AccountCard";
+export * from "./Heading";
+export * from "./FormLinkBox";
+export * from "./FlexWrapper";

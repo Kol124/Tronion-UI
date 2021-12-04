@@ -1,4 +1,4 @@
-import { parseCookies } from "@/helpers/index";
+import { parseCookies } from "utils/index";
 import { API_URL } from "@/config/index";
 import { useRouter } from "next/router";
 import { FaUser } from "react-icons/fa";
@@ -6,12 +6,12 @@ import styled from "styled-components";
 import Layout from "@/components/Layout";
 import DashboardItem from "@/components/DashboardItem";
 
-export default function DashboardPage({ events, token }) {
+export default function DashboardPage({ items, token }) {
   const router = useRouter();
 
   const deleteEvent = async (id) => {
     if (confirm("Are you sure?")) {
-      const res = await fetch(`${API_URL}/events/${id}`, {
+      const res = await fetch(`${API_URL}/items/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -34,10 +34,10 @@ export default function DashboardPage({ events, token }) {
         <h1>
           <FaUser /> Dashboard
         </h1>
-        <h3>My Events</h3>
+        <h3>My items</h3>
 
-        {events.map((evt) => (
-          <DashboardItem key={evt.id} evt={evt} handleDelete={deleteEvent} />
+        {items.map((item) => (
+          <DashboardItem key={item.id} item={item} handleDelete={deleteEvent} />
         ))}
       </DashBoardDetails>
     </Layout>
@@ -64,18 +64,18 @@ const DashBoardDetails = styled.main`
 export async function getServerSideProps({ req }) {
   const { token } = parseCookies(req);
 
-  const res = await fetch(`${API_URL}/events/me`, {
+  const res = await fetch(`${API_URL}/items/me`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
 
-  const events = await res.json();
+  const items = await res.json();
 
   return {
     props: {
-      events,
+      items,
       token,
     },
   };

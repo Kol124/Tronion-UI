@@ -4,14 +4,18 @@ import { FaUser } from "react-icons/fa";
 import Link from "next/link";
 import styled from "styled-components";
 import Layout from "@/components/Layout";
-// import AuthContext from "@/context/AuthContext";
+import AuthContext from "@/context/AuthContext";
 import { ToastContainer, toast } from "react-toastify";
 
-export default function RegisterPage() {
+export default function SignupPage() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
+
+  const { signup, error } = useContext(AuthContext);
+
+  useEffect(() => error && toast.error(error));
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,13 +24,15 @@ export default function RegisterPage() {
       toast.error("Passwords do not match!");
       return;
     }
+
+    signup({ username, email, password });
   };
 
   return (
     <Layout title="User Registration">
-      <Register>
+      <Signup>
         <h1>
-          <FaUser /> Register
+          <FaUser /> signup
         </h1>
         <ToastContainer />
         <form onSubmit={handleSubmit}>
@@ -67,18 +73,18 @@ export default function RegisterPage() {
             />
           </InputContainer>
 
-          <Button type="submit">Register</Button>
+          <Button type="submit">signup</Button>
         </form>
 
         <p>
           Already have an account? <Link href="/account/login">Login</Link>
         </p>
-      </Register>
+      </Signup>
     </Layout>
   );
 }
 
-const Register = styled.div`
+const Signup = styled.div`
   max-width: 50rem;
   margin: 2rem auto;
   background-color: #f6f6f6;

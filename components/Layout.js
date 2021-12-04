@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "./Header";
-import { Footer } from "./common";
+import Footer from "./Footer";
 import styled from "styled-components";
 
 export default function Layout({ title, keywords, description, children }) {
@@ -18,19 +18,19 @@ export default function Layout({ title, keywords, description, children }) {
         />
       </Head>
 
-      <Container>
+      <Body>
         <Header />
-        {children}
+        <Container>{children}</Container>
         <Footer>
           See our milestone for use cases, as we plan to reach 1USD per Tronion
           token
         </Footer>
-      </Container>
+      </Body>
     </div>
   );
 }
 
-const Container = styled.main`
+const Body = styled.main`
   margin: 0 auto 0 auto;
   position: relative;
   max-width: 1200px;
@@ -39,6 +39,10 @@ const Container = styled.main`
   @media only screen and (max-width: 1200px) {
     padding: 0 12px;
   }
+`;
+
+const Container = styled.div`
+  padding: 5% 0;
 `;
 
 Layout.defaultProps = {

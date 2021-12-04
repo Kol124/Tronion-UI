@@ -9,51 +9,53 @@ export const AuthProvider = ({ children }) => {
 
   const router = useRouter();
 
-  useEffect(() => checkUserLoggedIn(), []);
+  // useEffect(() => checkUserLoggedIn(), []);
 
   // Register user
-  const register = async (user) => {
-    const res = await fetch(`/api/register`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    });
+  const signup = async (user) => {
+    // const res = await fetch(`/api/signup`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(user),
+    // });
 
-    const data = await res.json();
+    // const data = await res.json();
 
-    if (res.ok) {
-      setUser(data.user);
-      router.push("/account/dashboard");
-    } else {
-      setError(data.message);
-      setError(null);
-    }
+    // if (res.ok) {
+    //   setUser(data.user);
+    //   router.push("/account/dashboard");
+    // } else {
+    //   setError(data.message);
+    //   setError(null);
+    // }
+    console.log("User: ", user);
   };
 
   // Login user
   const login = async ({ email: identifier, password }) => {
-    const res = await fetch(`/api/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        identifier,
-        password,
-      }),
-    });
+    // const res = await fetch(`/api/login`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     identifier,
+    //     password,
+    //   }),
+    // });
 
-    const data = await res.json();
+    // const data = await res.json();
 
-    if (res.ok) {
-      setUser(data.user);
-      router.push("/account/dashboard");
-    } else {
-      setError(data.message);
-      setError(null);
-    }
+    // if (res.ok) {
+    //   setUser(data.user);
+    //   router.push("/account/dashboard");
+    // } else {
+    //   setError(data.message);
+    //   setError(null);
+    // }
+    console.log(`Email: ${identifier}, password: ${password}`);
   };
 
   // Logout user
@@ -81,7 +83,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, error, register, login, logout }}>
+    <AuthContext.Provider value={{ user, error, signup, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

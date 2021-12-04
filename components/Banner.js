@@ -1,52 +1,78 @@
 import styled from "styled-components";
+import { Heading } from "./common";
+import Image from "next/image";
 
-export default function Banner({ title }) {
+export default function Banner({ title, text, image }) {
   return (
-    <HeaderImage>
-      <h1>{title}</h1>
-    </HeaderImage>
+    <BannerContainer>
+      <Heading className="h1 center">{title}</Heading>
+      <Heading className="h4 u-margin-top-medium center line-height-sm">
+        {text}
+      </Heading>
+      <BannerImages>
+        <ImageWrapper>
+          <Image
+            src={image[0]}
+            alt="first image"
+            objectFit="contain"
+            width={296}
+            height={296}
+          />
+        </ImageWrapper>
+        <ImageWrapper>
+          <Image
+            src={image[1]}
+            alt="second image"
+            objectFit="contain"
+            width={296}
+            height={296}
+          />
+        </ImageWrapper>
+      </BannerImages>
+    </BannerContainer>
   );
 }
 
-const HeaderImage = styled.div`
-  text-align: center;
-  position: relative;
-  height: 45vh;
-  color: #fff;
+const BannerContainer = styled.aside`
+  flex-basis: 45%;
+`;
+
+const BannerImages = styled.section`
   display: flex;
-  max-width: 113rem;
-  align-items: center;
-  flex-direction: column;
+  margin-top: 4rem;
   justify-content: center;
-  background: #000 url("/images/event.jpg") no-repeat center center;
+`;
+
+const ImageWrapper = styled.div`
+  :last-of-type {
+    margin-left: -27%;
+
+    @media only screen and (max-width: 1200px) {
+      margin-left: -20%;
+    }
+
+    @media only screen and (max-width: 1024px) {
+      margin-left: -10%;
+    }
+
+    @media only screen and (max-width: 1024px) {
+      margin-left: -7%;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    width: 200px;
+    height: 200px;
+  }
 
   @media only screen and (max-width: 768px) {
-    height: 30vh;
-  }
-
-  & * {
-    z-index: 20;
-  }
-
-  &::after {
-    position: absolute;
-    height: 100%;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-
-  h1 {
-    margin-bottom: 0;
-
-    @media only screen and (max-width: 768px) {
-      font-size: 2rem;
-    }
+    width: 106px;
+    height: 106px;
   }
 `;
 
 Banner.defaultProps = {
-  title: "Upcoming Events",
+  title: "Welcome!",
+  text: "Whether you are an expert or a beginner. Unifarm is going to become the first platform which will faster all your needs in a simple, easy and intuotive way",
+  image: ["/images/bnb-logo.png", "/images/tronion-logo-large.png"],
 };

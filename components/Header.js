@@ -45,7 +45,7 @@ export default function Header() {
       </nav>
 
       <Link href="/account/login">
-        <Button>Login</Button>
+        <Button className="primary margin-left">Login</Button>
       </Link>
     </Navigation>
   );
@@ -70,7 +70,6 @@ const Navigation = styled.header`
     list-style: none;
 
     > li {
-      font-weight: 700;
       transition: 0.3s ease;
       letter-spacing: 0.22em;
 
@@ -83,7 +82,7 @@ const Navigation = styled.header`
         color: ${(p) => p.theme.fontPrimary};
 
         :hover {
-          color: rgb(244, 135, 50);
+          color: ${(p) => p.theme.accent};
         }
       }
     }

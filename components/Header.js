@@ -72,6 +72,7 @@ const Navigation = styled.header`
 
 const Bars = styled(FaBars)`
   display: none;
+  cursor: pointer;
   fill: ${(p) => p.theme.fontPrimary};
 
   @media only screen and (max-width: 768px) {
@@ -81,6 +82,7 @@ const Bars = styled(FaBars)`
 
 const Close = styled(FaTimes)`
   display: none;
+  cursor: pointer;
   margin: 0 0 30% auto;
   fill: ${(p) => p.theme.fontPrimary};
 

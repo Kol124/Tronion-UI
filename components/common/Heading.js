@@ -46,4 +46,8 @@ export const Heading = styled.h2`
   &.center {
     text-align: center;
   }
+
+  &.right {
+    text-align: right;
+  }
 `;

@@ -23,11 +23,15 @@ export const FormCard = ({ title, image, children }) => {
 };
 
 const FormBackground = styled.div`
-  max-width: 500px;
+  margin-right: auto;
   border-radius: 20px;
   padding: 2.5rem 2.5rem 3rem;
   border: ${(p) => p.theme.border};
   background: ${(p) => p.theme.backgroundPrimary};
+
+  @media only screen and (max-width: 1024px) {
+    margin-right: 0;
+  }
 `;
 
 const FormHeader = styled.section`
@@ -35,10 +39,6 @@ const FormHeader = styled.section`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 15px;
-
-  .flex-column {
-    flex-direction: column;
-  }
 `;
 
 const ImageWrapper = styled.div`

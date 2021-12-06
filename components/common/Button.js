@@ -14,7 +14,7 @@ export const Button = styled.button`
     background: ${(p) => p.theme.btnPrimary};
   }
 
-  &.form {
+  &.secondary {
     width: 100%;
     padding: 8px 0;
     font-weight: 700;
@@ -28,10 +28,6 @@ export const Button = styled.button`
       color: ${(p) => p.theme.white};
       background: ${(p) => p.theme.backgroundPrimary};
     }
-  }
-
-  &.margin-left {
-    margin-left: 7%;
   }
 
   :hover {

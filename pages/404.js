@@ -12,9 +12,7 @@ export default function NotFoundPage() {
         </h1>
         <h4>Sorry, there is nothing here</h4>
         <Link href="/">
-          <ButtonLink>
-            <span> &larr;</span> Go Back Home
-          </ButtonLink>
+          <ButtonLink>Go Back Home</ButtonLink>
         </Link>
       </Error>
     </Layout>
@@ -36,26 +34,17 @@ const Error = styled.div`
 
 const ButtonLink = styled.a`
   transition: all 0.2s;
-  font-size: 1.8rem;
+  font-size: 16px;
   padding: 8px;
   border: none;
-  color: #000;
+  color: #fff;
   outline: none;
   cursor: pointer;
   margin-bottom: 1rem;
   display: inline-block;
 
-  & span {
-    margin-right: 3px;
-    transition: margin-right 0.2s;
-  }
-
   &:hover {
-    color: rgb(244, 135, 50);
-
-    span {
-      margin-right: 10px;
-    }
+    color: ${(p) => p.theme.accent};
   }
 
   &:focus {

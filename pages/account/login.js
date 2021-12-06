@@ -33,7 +33,7 @@ export default function LoginPage() {
   };
 
   return (
-    <Layout title="User Login">
+    <Layout title="Login">
       <FlexWrapper>
         <ToastContainer />
         <FormCard>
@@ -71,13 +71,13 @@ export default function LoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </InputContainer>
-            <Button className="form" type="submit">
+            <Button className="secondary" type="submit">
               Login
             </Button>
           </form>
 
           <Text className="u-margin-top-medium center">
-            Don't have an account? <Link href="/account/signup">Sign Up</Link>
+            Not on tronion yet? <Link href="/account/signup">SIGN UP</Link>
           </Text>
         </FormCard>
         <Banner title="Welcome Back!" />

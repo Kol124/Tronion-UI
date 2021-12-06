@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { FaLock } from "react-icons/fa";
 
 export const FormLinkBox = styled.section`
   height: 40px;

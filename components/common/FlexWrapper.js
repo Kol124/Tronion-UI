@@ -6,6 +6,6 @@ export const FlexWrapper = styled.section`
   justify-content: space-between;
 
   @media only screen and (max-width: 1024px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 `;

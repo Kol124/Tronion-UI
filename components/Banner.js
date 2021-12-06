@@ -35,28 +35,31 @@ export default function Banner({ title, text, image }) {
 
 const BannerContainer = styled.aside`
   flex-basis: 45%;
+
+  @media only screen and (max-width: 1024px) {
+    max-width: 760px;
+    margin-bottom: 3rem;
+  }
 `;
 
 const BannerImages = styled.section`
   display: flex;
   margin-top: 4rem;
   justify-content: center;
+
+  @media only screen and (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 const ImageWrapper = styled.div`
+  z-index: -10;
+
   :last-of-type {
     margin-left: -27%;
 
     @media only screen and (max-width: 1200px) {
       margin-left: -20%;
-    }
-
-    @media only screen and (max-width: 1024px) {
-      margin-left: -10%;
-    }
-
-    @media only screen and (max-width: 1024px) {
-      margin-left: -7%;
     }
   }
 

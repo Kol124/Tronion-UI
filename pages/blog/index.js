@@ -1,12 +1,12 @@
 import Layout from "@/components/Layout";
 import { API_URL, PER_PAGE } from "@/config/index";
-import Banner from "@/components/Banner";
+import { Heading } from "@/components/common";
 
 export default function HomePage({ posts, page, total }) {
   return (
     <Layout title="Blog">
-      <Banner title="Latest Posts" />
-      {posts.length === 0 && <h3>No posts to show</h3>}
+      {/* {!posts.length && <h3>No posts to show</h3>} */}
+      <Heading className="center">No Posts</Heading>
     </Layout>
   );
 }

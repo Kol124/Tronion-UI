@@ -4,7 +4,7 @@ export * from "./Input";
 export * from "./Button";
 // export * from "./Hero";
 // export * from "./Modal";
-// export * from "./Radial";
+export * from "./Radial";
 export * from "./Heading";
 export * from "./FormLinkBox";
 export * from "./FlexWrapper";

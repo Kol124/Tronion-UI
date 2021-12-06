@@ -1,15 +1,18 @@
-import Link from "next/link";
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "./common";
 import styled from "styled-components";
-// import AuthContext from "@/context/AuthContext";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <Navigation>
       <Logo>
         <Image
-          src="/tronion-logo.png"
+          src="/images/tronion-logo.png"
           alt="Tronion Logo"
           width={38}
           height={38}
@@ -19,79 +22,75 @@ export default function Header() {
         </Link>
       </Logo>
 
-      <nav>
+      <NavList open={menuOpen}>
+        <Close
+          size={20}
+          onClick={() => setMenuOpen((prevState) => !prevState)}
+        />
         <ul>
           <li>
-            <Link href="/">
+            <Link href="/features">
               <a>Features</a>
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/roadmap">
               <a>Roadmap</a>
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/team">
               <a>Our Team</a>
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/blog">
               <a>Blog</a>
             </Link>
           </li>
         </ul>
-      </nav>
+      </NavList>
 
       <Link href="/account/login">
-        <Button className="primary margin-left">Login</Button>
+        <Button className="primary">Login</Button>
       </Link>
+
+      <Bars size={20} onClick={() => setMenuOpen((prevState) => !prevState)} />
     </Navigation>
   );
 }
 
 const Navigation = styled.header`
   display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
   color: ${(p) => p.theme.fontPrimary};
+  justify-content: space-between;
   align-items: center;
   padding: 20px 0;
+`;
 
-  /* @media (max-width: 1024px) {
-    padding: 0 10px;
-    justify-content: space-between;
-  } */
+const Bars = styled(FaBars)`
+  display: none;
+  fill: ${(p) => p.theme.fontPrimary};
 
-  nav > ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-basis: 45%;
-    list-style: none;
+  @media only screen and (max-width: 768px) {
+    display: block;
+  }
+`;
 
-    > li {
-      transition: 0.3s ease;
-      letter-spacing: 0.22em;
+const Close = styled(FaTimes)`
+  display: none;
+  margin: 0 0 30% auto;
+  fill: ${(p) => p.theme.fontPrimary};
 
-      &:not(:last-of-type) {
-        margin-right: 2rem;
-      }
-
-      a {
-        font-size: 15px;
-        color: ${(p) => p.theme.fontPrimary};
-
-        :hover {
-          color: ${(p) => p.theme.accent};
-        }
-      }
-    }
+  @media only screen and (max-width: 768px) {
+    display: block;
   }
 `;
 
 const Logo = styled.div`
   display: flex;
-  flex-basis: 40%;
   align-items: center;
 
   span {
@@ -99,5 +98,71 @@ const Logo = styled.div`
     margin-left: 2px;
     text-transform: capitalize;
     cursor: pointer;
+  }
+
+  @media only screen and (max-width: 768px) {
+    flex-basis: 55%;
+  }
+`;
+
+const NavList = styled.nav`
+  transition: 0.3s ease;
+
+  @media only screen and (max-width: 768px) {
+    right: ${(p) => (p.open ? 0 : "-275px")};
+    position: fixed;
+    display: block;
+    height: 100%;
+    top: 0;
+    width: 275px;
+    z-index: 1000;
+    overflow: hidden;
+    padding: 40px 30px;
+    background: ${(p) => p.theme.backgroundPrimary};
+  }
+
+  & > ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: 768px) {
+      display: block;
+    }
+
+    > li {
+      font-size: 15px;
+      transition: 0.3s ease;
+      letter-spacing: 0.22em;
+
+      &:not(:last-of-type) {
+        margin-right: 2rem;
+      }
+
+      @media only screen and (max-width: 768px) {
+        font-size: 23px;
+        padding: 12px 0;
+        text-align: center;
+        letter-spacing: -0.05em;
+        border-bottom: 1px solid rgba(134, 132, 132, 0.5);
+
+        &:not(:last-of-type) {
+          margin-right: 0;
+        }
+
+        &:first-of-type {
+          border-top: 1px solid rgba(134, 132, 132, 0.5);
+        }
+      }
+
+      a {
+        color: ${(p) => p.theme.fontPrimary};
+
+        :hover {
+          color: ${(p) => p.theme.accent};
+        }
+      }
+    }
   }
 `;

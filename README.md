@@ -1,4 +1,4 @@
-# Trunion UI
+# Tronion UI
 
 Run dev server:
 
@@ -6,7 +6,7 @@ Run dev server:
 npm run dev
 ```
 
-Home page is in `pages/index.js`, the user pages are in `pages/account` directory. For Theme `utils/theme.js`, modal component logic is already set from previous project, only redesign has to be done. off-cnvas nav overlay hasn't been added. I used classNames to create variants for components
+Home page is in `pages/index.js`, the user pages are in `pages/account` directory, theme file `utils/theme.js`, modal component logic is already set from previous project and integrated with nextjs in the `_document.js` file, only redesign has to be done. off-canvas nav overlay hasn't been added. I used classNames to create variants for the reusable components.
 
 All new components to be created are only variants of reusable components in the `components/commons`, directory except for:
 - Dashboard side bar

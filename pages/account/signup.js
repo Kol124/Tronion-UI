@@ -8,10 +8,10 @@ import Layout from "@/components/Layout";
 import AuthContext from "@/context/AuthContext";
 import { FormCard } from "@/components/FormCard";
 import {
-  PasswordIcon,
+  InputPasswordIcon,
   FormLinkBox,
-  EmailIcon,
-  UserIcon,
+  InputEmailIcon,
+  InputUserIcon,
   Input,
   Line,
   Text,
@@ -53,7 +53,7 @@ export default function SignupPage() {
 
           <form onSubmit={handleSubmit}>
             <InputContainer>
-              <EmailIcon />
+              <InputEmailIcon />
               <Input
                 type="email"
                 id="email"
@@ -64,7 +64,7 @@ export default function SignupPage() {
             </InputContainer>
 
             <InputContainer>
-              <UserIcon />
+              <InputUserIcon />
               <Input
                 type="text"
                 id="user"
@@ -75,7 +75,7 @@ export default function SignupPage() {
             </InputContainer>
 
             <InputContainer>
-              <PasswordIcon />
+              <InputPasswordIcon />
               <Input
                 type="password"
                 id="password"

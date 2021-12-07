@@ -1,8 +1,8 @@
+export * from "./Icons";
 export * from "./Line";
 export * from "./Text";
 export * from "./Input";
 export * from "./Button";
-// export * from "./Hero";
 // export * from "./Modal";
 export * from "./Radial";
 export * from "./Heading";

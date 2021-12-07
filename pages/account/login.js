@@ -8,9 +8,9 @@ import Layout from "@/components/Layout";
 import AuthContext from "@/context/AuthContext";
 import { FormCard } from "@/components/FormCard";
 import {
-  PasswordIcon,
+  InputPasswordIcon,
+  InputEmailIcon,
   FormLinkBox,
-  EmailIcon,
   Input,
   Line,
   Text,
@@ -52,7 +52,7 @@ export default function LoginPage() {
 
           <form onSubmit={handleSubmit}>
             <InputContainer>
-              <EmailIcon />
+              <InputEmailIcon />
               <Input
                 type="email"
                 id="email"
@@ -63,7 +63,7 @@ export default function LoginPage() {
             </InputContainer>
 
             <InputContainer>
-              <PasswordIcon />
+              <InputPasswordIcon />
               <Input
                 type="password"
                 id="password"

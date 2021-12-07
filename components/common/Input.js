@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { FaUser, FaLock, FaEnvelope } from "react-icons/fa";
 
 const InputContainer = styled.div`
   position: relative;
@@ -29,28 +28,4 @@ const Input = styled.input`
   }
 `;
 
-const UserIcon = styled(FaUser)`
-  fill: ${(p) => p.theme.inputColor};
-  font-size: 18px;
-  top: 15px;
-  left: 1.5rem;
-  position: absolute;
-`;
-
-const PasswordIcon = styled(FaLock)`
-  fill: ${(p) => p.theme.inputColor};
-  font-size: 18px;
-  top: 15px;
-  left: 1.5rem;
-  position: absolute;
-`;
-
-const EmailIcon = styled(FaEnvelope)`
-  fill: ${(p) => p.theme.inputColor};
-  font-size: 18px;
-  top: 15px;
-  left: 1.5rem;
-  position: absolute;
-`;
-
-export { InputContainer, Input, UserIcon, PasswordIcon, EmailIcon };
+export { InputContainer, Input };

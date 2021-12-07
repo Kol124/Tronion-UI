@@ -32,6 +32,10 @@ const FormBackground = styled.div`
   @media only screen and (max-width: 1024px) {
     margin-right: 0;
   }
+
+  @media only screen and (min-width: 768px) {
+    min-width: 480px;
+  }
 `;
 
 const FormHeader = styled.section`

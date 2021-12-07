@@ -36,7 +36,7 @@ export default function LoginPage() {
     <Layout title="Login">
       <FlexWrapper>
         <ToastContainer />
-        <FormCard>
+        <FormCard title="Login">
           <Text className="grey bold u-margin-bottom-small">
             Please check that you are visiting{" "}
             <Link href="/account/signup">https://tronion.org</Link>

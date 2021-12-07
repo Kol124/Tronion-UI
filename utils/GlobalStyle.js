@@ -26,10 +26,6 @@ export const GlobalStyle = createGlobalStyle`
     transition: 0.2s ease;
   }
 
-  input:-webkit-auto-fill {
-    background-color: red !important;
-  }
-
   .line-height-sm {
     line-height: 22px;
   }

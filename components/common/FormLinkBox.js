@@ -1,27 +1,26 @@
 import styled from "styled-components";
 
 export const FormLinkBox = styled.section`
-  height: 40px;
   display: flex;
+  min-height: 40px;
+  padding: 5px 10px;
   border-radius: 12px;
   align-items: center;
   background-color: ${(p) => p.theme.white};
 
-  .icon-left {
-    width: 10%;
-    height: 85%;
-    fill: #01ac5a;
+  p {
     padding: 0 10px;
-    margin-right: 10px;
-    border-right: 1px solid #d4dee7;
+    margin-left: 10px;
+    border-left: 1px solid #d4dee7;
+  }
+
+  .icon-left {
+    fill: #01ac5a;
   }
 
   .icon-right {
-    width: 10%;
-    height: 85%;
     fill: #5e6875;
-    padding: 0 10px;
-    margin-left: auto;
     cursor: pointer;
+    margin-left: auto;
   }
 `;

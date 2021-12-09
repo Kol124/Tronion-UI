@@ -24,19 +24,30 @@ export default function Tasks() {
       <TasksCard>
         <section className="taskItem">
           <Heading className="h3">Follow @Troinion on Twitter</Heading>
-          <Button className="primary">Follow</Button>
+          <Button className="tertiary">Follow</Button>
         </section>
         <section className="taskItem">
-          <Heading className="h3">Follow @Troinion on Twitter</Heading>
-          <Button className="primary">Follow</Button>
+          <Heading className="h3">Retweet @Troinion on Twitter</Heading>
+          <Button className="tertiary">Follow</Button>
         </section>
         <section className="taskItem">
-          <Heading className="h3">Follow @Troinion on Twitter</Heading>
-          <Button className="primary">Follow</Button>
+          <Heading className="h3">Join @Troinion Telegram Channel</Heading>
+          <Button className="tertiary">Follow</Button>
         </section>
-        <Button className="secondary" onClick={() => setShowModal(true)}>
-          Verify
-        </Button>
+        <section className="taskItem">
+          <Heading className="h3">Join @Troinion Telegram Chat</Heading>
+          <Button className="tertiary">Follow</Button>
+        </section>
+        <section className="taskItem">
+          <Heading className="h3">Refer Your friends</Heading>
+          <Button className="tertiary" onClick={() => setShowModal(true)}>
+            Refer
+          </Button>
+        </section>
+        <Button className="secondary">Verify</Button>
+        <Text className="u-margin-top-small center">
+          You cant proceed to claim airdrop without completing the task.
+        </Text>
       </TasksCard>
 
       <Modal show={showModal} onClose={() => setShowModal(false)}>

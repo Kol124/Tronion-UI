@@ -30,6 +30,19 @@ export const Button = styled.button`
     }
   }
 
+  &.tertiary {
+    color: #14131a;
+    padding: 6px 30px;
+    border-radius: 50px;
+    background: ${(p) => p.theme.white};
+
+    :hover {
+      font-weight: 900;
+      background: ${(p) => p.theme.white};
+      border: none;
+    }
+  }
+
   :hover {
     background: inherit;
     border: 1px solid ${(p) => p.theme.accent};

@@ -17,7 +17,7 @@ const DashboardSidebar = () => {
           <span>Tronion</span>
         </Link>
       </Logo>
-      <Heading className="h1 center">Dashboard</Heading>
+      <Heading className="h1">Dashboard</Heading>
       <ul>
         <li>
           <Link href="/dashboard/task">
@@ -43,18 +43,24 @@ const Navigation = styled.aside`
   transition: 0.3s ease;
   margin-bottom: 2rem;
 
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 1199px) {
     border-radius: 45px;
     position: fixed;
     display: block;
     height: 100%;
-    left: 0;
+    left: -25px;
     top: 0;
-    width: 450px;
+    width: 30%;
     z-index: 1000;
     overflow: hidden;
-    padding: 20px 30px;
+    padding: 20px 0 30px 60px;
     background: ${(p) => p.theme.backgroundPrimary};
+  }
+
+  .h1 {
+    @media only screen and (max-width: 1199px) {
+      text-align: center;
+    }
   }
 
   & > ul {
@@ -62,27 +68,33 @@ const Navigation = styled.aside`
     list-style: none;
     align-items: center;
     justify-content: space-between;
-    margin: 0 auto;
     max-width: 760px;
+    margin: 0 auto;
 
     @media only screen and (min-width: 1200px) {
       display: block;
     }
 
     > li {
-      font-size: 15px;
+      font-size: 20px;
       transition: 0.3s ease;
       letter-spacing: 0.22em;
+      cursor: pointer;
+      padding: 18px;
 
-      &:not(:last-of-type) {
-        margin-right: 2rem;
+      :hover {
+        background: ${(p) => p.theme.bodyBackground};
       }
 
-      @media only screen and (max-width: 768px) {
-        font-size: 23px;
+      @media only screen and (max-width: 1200px) {
         padding: 12px 0;
+        font-size: 15px;
         text-align: center;
         letter-spacing: -0.05em;
+
+        :hover {
+          background: inherit;
+        }
       }
 
       a {

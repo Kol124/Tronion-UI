@@ -12,7 +12,7 @@ import {
 
 export default function Airdrop() {
   return (
-    <Layout title="Airdrop">
+    <Layout title="Dashboard | Airdrop">
       <Heading className="center">Airdrop</Heading>
     </Layout>
   );

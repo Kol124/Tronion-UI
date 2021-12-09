@@ -12,7 +12,7 @@ import {
 
 export default function ICO() {
   return (
-    <Layout title="ICO">
+    <Layout title="Dashboard | ICO">
       <Heading className="center">ICO (coming soon)</Heading>
     </Layout>
   );

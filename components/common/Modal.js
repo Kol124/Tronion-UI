@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
 import { FaTimes } from "react-icons/fa";
 import styled from "styled-components";
+import { Counter } from "./Counter";
+import ReactDOM from "react-dom";
 
-export default function Modal({ show, onClose, children, title }) {
+export function Modal({ show, onClose, children, title }) {
   const [isBrowser, setIsBrowser] = useState(false);
 
   useEffect(() => setIsBrowser(true));
@@ -23,6 +24,9 @@ export default function Modal({ show, onClose, children, title }) {
         </Close>
         {title && <div>{title}</div>}
         <div>{children}</div>
+        <Counter>
+          <span>0/3</span>
+        </Counter>
       </LightBoxContent>
     </LightBox>
   ) : null;
@@ -51,24 +55,26 @@ const LightBox = styled.div`
 const LightBoxContent = styled.div`
   top: 50%;
   left: 50%;
-  height: 40%;
-  width: 56.5rem;
-  padding: 2.5rem;
-  overflow: hidden;
-  border-radius: 2px;
   position: absolute;
-  background-color: #f6f6f6;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  padding: 2.5rem 2.5rem 3rem;
   transform: translate(-50%, -50%);
-  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+  border: ${(p) => p.theme.border};
+  background: ${(p) => p.theme.backgroundPrimary};
+
+  @media only screen and (min-width: 768px) {
+    min-width: 480px;
+  }
 `;
 
 const Close = styled.div`
   display: flex;
-  font-size: 2.5rem;
+  font-size: 16px;
   justify-content: flex-end;
 
   a {
-    color: #f48732;
+    color: #fff;
   }
 `;
 

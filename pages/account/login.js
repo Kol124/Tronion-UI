@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Link from "next/link";
-import { FaLock, FaCopy } from "react-icons/fa";
+import { FaLock, FaRegCopy } from "react-icons/fa";
 import Banner from "@/components/Banner";
 import Layout from "@/components/Layout";
 import AuthContext from "@/context/AuthContext";
@@ -45,7 +45,7 @@ export default function LoginPage() {
           <FormLinkBox>
             <FaLock className="icon-left" />
             <Text className="grey">https://www.tronion.org</Text>
-            <FaCopy className="icon-right" />
+            <FaRegCopy className="icon-right" />
           </FormLinkBox>
 
           <Line />

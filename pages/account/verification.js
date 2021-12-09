@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Banner from "@/components/Banner";
 import Layout from "@/components/Layout";
-import { FaEnvelope } from "react-icons/fa";
+import { FaRegEnvelope } from "react-icons/fa";
 import { FormCard } from "@/components/FormCard";
 import { Line, Text, LargeIcon, FlexWrapper } from "@/components/common";
 
@@ -20,7 +20,7 @@ export default function VerificationPage() {
           <Line />
 
           <LargeIcon>
-            <FaEnvelope size={48} />
+            <FaRegEnvelope size={48} />
           </LargeIcon>
 
           <Text className="u-margin-top-medium center">

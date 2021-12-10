@@ -6,7 +6,7 @@ Run dev server:
 npm run dev
 ```
 
-Home page is in `pages/index.js`, the user pages are in `pages/account` directory, theme file `utils/theme.js`, modal component logic is already set from previous project and integrated with nextjs in the `_document.js` file. I used classNames to create variants for the reusable components. Environment variables are configured in `config/index.js`.
+Home page is in `pages/index.js`, the user pages are in `pages/account` directory, theme file `utils/theme.js`, modal component logic is already set from previous project and integrated with nextjs in the `_document.js` file. classNames are used to create variants for the reusable components. Environment variables are configured in `config/index.js`.
 
 Authentication state logic and api endpoints are mostly from previous projects.
 

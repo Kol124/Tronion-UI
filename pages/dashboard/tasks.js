@@ -1,19 +1,16 @@
-import Link from "next/link";
 import { useState } from "react";
 import Layout from "@/components/Layout";
 import { FaLock, FaRegCopy } from "react-icons/fa";
 import {
   FormLinkBox,
-  TasksCard,
   Heading,
-  Modal,
-  Line,
   Text,
   Button,
-  LargeIcon,
-  FlexWrapper,
+  ListIcon,
 } from "@/components/common";
-import DashboardSidebar from "@/components/DashboardSIdebar";
+import { Modal } from "@/components/Modal";
+import { TasksCard } from "@/components/TasksCard";
+import DashboardSidebar from "@/components/DashboardSidebar";
 
 export default function Tasks() {
   const [showModal, setShowModal] = useState(false);
@@ -21,26 +18,32 @@ export default function Tasks() {
   return (
     <Layout title="Dashboard | Tasks">
       <DashboardSidebar />
+
       <TasksCard>
         <section className="taskItem">
-          <Heading className="h3">Follow @Troinion on Twitter</Heading>
-          <Button className="tertiary">Follow</Button>
+          <ListIcon />
+          <Heading className="h4">Follow @Troinion on Twitter</Heading>
+          <Button className="small">Follow</Button>
         </section>
         <section className="taskItem">
-          <Heading className="h3">Retweet @Troinion on Twitter</Heading>
-          <Button className="tertiary">Follow</Button>
+          <ListIcon />
+          <Heading className="h4">Retweet @Troinion on Twitter</Heading>
+          <Button className="small">Retweet</Button>
         </section>
         <section className="taskItem">
-          <Heading className="h3">Join @Troinion Telegram Channel</Heading>
-          <Button className="tertiary">Follow</Button>
+          <ListIcon />
+          <Heading className="h4">Join @Troinion Telegram Channel</Heading>
+          <Button className="small">Join</Button>
         </section>
         <section className="taskItem">
-          <Heading className="h3">Join @Troinion Telegram Chat</Heading>
-          <Button className="tertiary">Follow</Button>
+          <ListIcon />
+          <Heading className="h4">Join @Troinion Telegram Chat</Heading>
+          <Button className="small">Join</Button>
         </section>
         <section className="taskItem">
-          <Heading className="h3">Refer Your friends</Heading>
-          <Button className="tertiary" onClick={() => setShowModal(true)}>
+          <ListIcon />
+          <Heading className="h4">Refer Your friends</Heading>
+          <Button className="small" onClick={() => setShowModal(true)}>
             Refer
           </Button>
         </section>

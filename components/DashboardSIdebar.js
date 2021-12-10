@@ -1,9 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
-import { Heading, Button } from "./common";
+import { Heading, CircleIcon } from "./common";
+import { useRouter } from "next/router";
 
 const DashboardSidebar = () => {
+  const router = useRouter();
+
   return (
     <Navigation>
       <Logo>
@@ -19,17 +22,20 @@ const DashboardSidebar = () => {
       </Logo>
       <Heading className="h1">Dashboard</Heading>
       <ul>
-        <li>
-          <Link href="/dashboard/task">
+        <li className={router.pathname == "/dashboard/tasks" ? "active" : ""}>
+          <CircleIcon />
+          <Link href="/dashboard/tasks">
             <a>Tasks</a>
           </Link>
         </li>
-        <li>
+        <li className={router.pathname == "/dashboard/airdrop" ? "active" : ""}>
+          <CircleIcon />
           <Link href="/dashboard/airdrop">
             <a>Claim Airdrop</a>
           </Link>
         </li>
-        <li>
+        <li className={router.pathname == "/dashboard/ico" ? "active" : ""}>
+          <CircleIcon />
           <Link href="/dashboard/ico">
             <a>ICO (coming soon)</a>
           </Link>
@@ -40,61 +46,114 @@ const DashboardSidebar = () => {
 };
 
 const Navigation = styled.aside`
+  border-radius: 45px;
+  position: fixed;
+  display: block;
+  height: 100%;
+  left: -25px;
+  top: 0;
+  width: 30%;
+  z-index: 1000;
+  overflow: hidden;
   transition: 0.3s ease;
-  margin-bottom: 2rem;
+  padding: 20px 0 30px 70px;
+  background: ${(p) => p.theme.backgroundPrimary};
 
-  @media only screen and (min-width: 1199px) {
-    border-radius: 45px;
-    position: fixed;
-    display: block;
-    height: 100%;
-    left: -25px;
-    top: 0;
-    width: 30%;
-    z-index: 1000;
-    overflow: hidden;
-    padding: 20px 0 30px 60px;
-    background: ${(p) => p.theme.backgroundPrimary};
+  @media only screen and (max-width: 1200px) {
+    .h1 {
+      font-size: 30px;
+    }
+
+    & > ul > li {
+      font-size: 18px;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    width: 100%;
+    height: auto;
+    position: static;
+    margin-bottom: 2rem;
+    padding: 0 10px 0 10px;
   }
 
   .h1 {
-    @media only screen and (max-width: 1199px) {
+    margin-bottom: 1rem;
+
+    @media only screen and (max-width: 1024px) {
+      margin-top: 1rem;
       text-align: center;
     }
   }
 
   & > ul {
-    display: flex;
+    display: block;
     list-style: none;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 760px;
-    margin: 0 auto;
 
-    @media only screen and (min-width: 1200px) {
-      display: block;
+    @media only screen and (max-width: 1024px) {
+      display: flex;
+      list-style: none;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 760px;
+      margin: 0 auto;
     }
 
     > li {
-      font-size: 20px;
+      display: flex;
+      font-size: 22px;
+      align-items: center;
       transition: 0.3s ease;
-      letter-spacing: 0.22em;
       cursor: pointer;
-      padding: 18px;
+      padding: 18px 0;
 
-      :hover {
+      &.active {
+        position: relative;
         background: ${(p) => p.theme.bodyBackground};
+
+        ${CircleIcon} {
+          z-index: 100;
+          background: rgba(128, 128, 128, 0.18);
+        }
+
+        &:after {
+          position: absolute;
+          content: "";
+          width: 15%;
+          top: 0;
+          left: -25px;
+          height: 100%;
+          border-radius: 50%;
+          background: ${(p) => p.theme.bodyBackground};
+        }
+
+        @media only screen and (max-width: 1024px) {
+          background: none;
+
+          &:after {
+            display: none;
+          }
+        }
       }
 
-      @media only screen and (max-width: 1200px) {
-        padding: 12px 0;
-        font-size: 15px;
+      :hover {
+        ${CircleIcon} {
+          background: rgba(128, 128, 128, 0.18);
+        }
+      }
+
+      @media only screen and (max-width: 1024px) {
+        padding: 10px 0;
         text-align: center;
         letter-spacing: -0.05em;
 
         :hover {
           background: inherit;
         }
+      }
+
+      @media only screen and (max-width: 480px) {
+        font-size: 16px;
       }
 
       a {
@@ -114,7 +173,7 @@ const Logo = styled.div`
   align-items: center;
   margin: 0 auto 4rem auto;
 
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 1024px) {
     display: none;
   }
 

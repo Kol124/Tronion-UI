@@ -49,6 +49,7 @@ export default function Header() {
             </Link>
           </li>
         </ul>
+        <Overlay open={menuOpen} />
       </NavList>
 
       <Link href="/account/login">
@@ -73,6 +74,7 @@ const Navigation = styled.header`
 const Bars = styled(FaBars)`
   display: none;
   cursor: pointer;
+  margin-left: 10px;
   fill: ${(p) => p.theme.fontPrimary};
 
   @media only screen and (max-width: 768px) {
@@ -167,4 +169,17 @@ const NavList = styled.nav`
       }
     }
   }
+`;
+
+const Overlay = styled.div`
+  visibility: ${(p) => (p.open ? "visible" : "hidden")};
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.3s;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: ${(p) => (p.open ? 1 : 0)};
 `;

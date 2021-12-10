@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
-import styled from "styled-components";
-import { Counter } from "./Counter";
 import ReactDOM from "react-dom";
+import styled from "styled-components";
+import { Counter } from "@/components/common";
 
 export function Modal({ show, onClose, children, title }) {
   const [isBrowser, setIsBrowser] = useState(false);
@@ -65,6 +65,11 @@ const LightBoxContent = styled.div`
 
   @media only screen and (min-width: 768px) {
     min-width: 480px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    width: 95%;
+    padding: 2rem 1.2rem 2.5rem;
   }
 `;
 

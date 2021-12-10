@@ -4,7 +4,11 @@ export const Button = styled.button`
   border: none;
   font: inherit;
   color: #f9f9f9;
+  border-radius: 50px;
+  background: inherit;
   transition: all 0.3s ease;
+  background: #494850;
+  padding: 4px 20px;
   cursor: pointer;
   outline: none;
 
@@ -24,15 +28,16 @@ export const Button = styled.button`
     color: #121116;
 
     :hover {
+      background: none;
       border: 1px solid #9beaf1;
       color: ${(p) => p.theme.white};
-      background: ${(p) => p.theme.backgroundPrimary};
     }
   }
 
-  &.tertiary {
+  &.small {
+    min-width: 90px;
+    padding: 5px 0;
     color: #14131a;
-    padding: 6px 30px;
     border-radius: 50px;
     background: ${(p) => p.theme.white};
 
@@ -45,6 +50,6 @@ export const Button = styled.button`
 
   :hover {
     background: inherit;
-    border: 1px solid ${(p) => p.theme.accent};
+    border: 1px solid ${(p) => p.theme.white};
   }
 `;

@@ -25,12 +25,16 @@ export const FormCard = ({ title, image, children }) => {
 const FormBackground = styled.div`
   margin-right: auto;
   border-radius: 20px;
-  padding: 2.5rem 2.5rem 3rem;
+  padding: 3rem 3.5rem;
   border: ${(p) => p.theme.border};
   background: ${(p) => p.theme.backgroundPrimary};
 
   @media only screen and (max-width: 1024px) {
     margin-right: 0;
+  }
+
+  @media only screen and (max-width: 480px) {
+    padding: 2.5rem 2.5rem;
   }
 
   @media only screen and (min-width: 768px) {

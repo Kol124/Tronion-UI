@@ -1,19 +1,12 @@
-import Link from "next/link";
 import Layout from "@/components/Layout";
-import { FaEnvelope } from "react-icons/fa";
-import { FormCard } from "@/components/FormCard";
-import {
-  Heading,
-  Line,
-  Text,
-  LargeIcon,
-  FlexWrapper,
-} from "@/components/common";
+import { Countdown } from "@/components/Countdown";
+import DashboardSidebar from "@/components/DashboardSidebar";
 
 export default function ICO() {
   return (
     <Layout title="Dashboard | ICO">
-      <Heading className="center">ICO (coming soon)</Heading>
+      <DashboardSidebar />
+      <Countdown />
     </Layout>
   );
 }
